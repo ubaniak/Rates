@@ -1,4 +1,5 @@
 Rates::Application.routes.draw do
+  devise_for :account_holders
   devise_for :admins
   root "pages#home"
   # The priority is based upon order of creation: first created -> highest priority.
