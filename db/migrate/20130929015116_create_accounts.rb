@@ -12,6 +12,7 @@ class CreateAccounts < ActiveRecord::Migration
       t.float :land_value
       t.float :improved
       t.float :TRV
+      t.integer :account_holder_id
 
       t.timestamps
     end
