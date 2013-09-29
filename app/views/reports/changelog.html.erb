@@ -1,0 +1,16 @@
+<% @changelogs.each do |changelog| %>
+    <div>
+        Date: <%= changelog.date %><br>
+        Time: <%= changelog.time %><br>
+        Account: <%= changelog.account.accno %><br>
+        Column: <%= changelog.column %><br>
+        From: <%= changelog.from %><br>
+        To: <%= changelog.to %><br>
+        Supporting document: <%= changelog.supporting_document %><br>
+        Comment: <%= changelog.comment %><br>
+        <br>
+        Done By: <%= changelog.admin.name %><br>
+        <br>
+        <br>
+    </div>
+<% end %>

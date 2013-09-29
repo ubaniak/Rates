@@ -1,4 +1,10 @@
 Rates::Application.routes.draw do
+
+
+    # reports
+  get "changelog_report" => "reports#changelog"
+
+
   resources :accounts
 
   devise_for :account_holders

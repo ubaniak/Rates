@@ -32,6 +32,7 @@ class AccountsController < ApplicationController
 
     respond_to do |format|
       if @account.save
+          ChangeLog.account_created(@account.id, current_admin.id)
         format.html { redirect_to @account, notice: 'Account was successfully created.' }
         format.json { render action: 'show', status: :created, location: @account }
       else
