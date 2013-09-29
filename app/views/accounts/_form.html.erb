@@ -23,10 +23,11 @@
     <%= f.label :address %><br>
     <%= f.text_field :address %>
   </div>
-  <div class="field">
-    <%= f.label :area_id %><br>
-    <%= f.number_field :area_id %>
-  </div>
+    <div class="field">
+        <%= f.label :area_id %><br />
+        <%= f.select :area_id, options_from_collection_for_select(Area.all, "id","name") %>
+    </div>
+
   <div class="field">
     <%= f.label :catagory_id %><br>
     <%= f.number_field :catagory_id %>
