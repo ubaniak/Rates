@@ -1,5 +1,8 @@
 class AccountsController < ApplicationController
-    before_action :authenticate_admin!
+    before_action :authenticate_admin!, only: [:index]
+    before_action :can_create, only: [:new, :create, :destroy]
+    before_action :can_update, only: [:edit, :update]
+
   before_action :set_account, only: [:show, :edit, :update, :destroy]
 
   # GET /accounts
