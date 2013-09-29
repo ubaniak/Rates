@@ -1,0 +1,61 @@
+<%= form_for(@account) do |f| %>
+  <% if @account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@account.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+      <ul>
+      <% @account.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :accno %><br>
+    <%= f.text_field :accno %>
+  </div>
+  <div class="field">
+    <%= f.label :plotno %><br>
+    <%= f.text_field :plotno %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :area_id %><br>
+    <%= f.number_field :area_id %>
+  </div>
+  <div class="field">
+    <%= f.label :catagory_id %><br>
+    <%= f.number_field :catagory_id %>
+  </div>
+  <div class="field">
+    <%= f.label :property_value %><br>
+    <%= f.text_field :property_value %>
+  </div>
+  <div class="field">
+    <%= f.label :hecter %><br>
+    <%= f.text_field :hecter %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :land_value %><br>
+    <%= f.text_field :land_value %>
+  </div>
+  <div class="field">
+    <%= f.label :improved %><br>
+    <%= f.text_field :improved %>
+  </div>
+  <div class="field">
+    <%= f.label :TRV %><br>
+    <%= f.text_field :TRV %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

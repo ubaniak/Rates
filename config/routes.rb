@@ -1,4 +1,6 @@
 Rates::Application.routes.draw do
+  resources :accounts
+
   devise_for :account_holders
   devise_for :admins
   root "pages#home"

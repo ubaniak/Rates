@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  accno: MyString
+  plotno: MyString
+  address: MyString
+  area_id: 1
+  catagory_id: 1
+  property_value: 1.5
+  hecter: 1.5
+  description: MyString
+  land_value: 1.5
+  improved: 1.5
+  TRV: 1.5
+
+two:
+  accno: MyString
+  plotno: MyString
+  address: MyString
+  area_id: 1
+  catagory_id: 1
+  property_value: 1.5
+  hecter: 1.5
+  description: MyString
+  land_value: 1.5
+  improved: 1.5
+  TRV: 1.5

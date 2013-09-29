@@ -1,0 +1,47 @@
+<h1>Listing accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Accno</th>
+      <th>Plotno</th>
+      <th>Address</th>
+      <th>Area</th>
+      <th>Catagory</th>
+      <th>Property value</th>
+      <th>Hecter</th>
+      <th>Description</th>
+      <th>Land value</th>
+      <th>Improved</th>
+      <th>Trv</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.accno %></td>
+        <td><%= account.plotno %></td>
+        <td><%= account.address %></td>
+        <td><%= account.area_id %></td>
+        <td><%= account.catagory_id %></td>
+        <td><%= account.property_value %></td>
+        <td><%= account.hecter %></td>
+        <td><%= account.description %></td>
+        <td><%= account.land_value %></td>
+        <td><%= account.improved %></td>
+        <td><%= account.TRV %></td>
+        <td><%= link_to 'Show', account %></td>
+        <td><%= link_to 'Edit', edit_account_path(account) %></td>
+        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Account', new_account_path %>
