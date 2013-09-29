@@ -1,0 +1,23 @@
+<%= form_tag update_account_holder_path(@account.id), :method => "get" do %>
+  <% if @account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@account.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+      <ul>
+      <% @account.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+        <%= label_tag :account_holder_id %><br />
+        <%= select_tag :account_holder_id, options_from_collection_for_select(AccountHolder.all, "id","name") %>
+    </div>
+
+    <%= text_field_tag :supporting_documents %><br>
+    <%= text_field_tag :comments %>
+
+    <%= submit_tag "Update" %>
+<% end %>

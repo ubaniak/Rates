@@ -3,7 +3,18 @@ class AccountsController < ApplicationController
     before_action :can_create, only: [:new, :create, :destroy]
     before_action :can_update, only: [:edit, :update]
 
-  before_action :set_account, only: [:show, :edit, :update, :destroy]
+  before_action :set_account, only: [:change_account_holder, :update_account_holder, :show, :edit, :update, :destroy]
+
+  def change_account_holder
+  end
+
+  def update_account_holder
+      if ChangeLog.change_account_holder(@account, current_admin, account_holder_params)
+          redirect_to @account
+      else
+          redirect_to @account
+      end
+  end
 
   # GET /accounts
   # GET /accounts.json
@@ -75,5 +86,9 @@ class AccountsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def account_params
       params.require(:account).permit(:accno, :plotno, :address, :area_id, :catagory_id, :property_value, :hecter, :description, :land_value, :improved, :TRV)
+    end
+
+    def account_holder_params
+        params.permit(:account_holder_id, :comments, :supporting_documents)
     end
 end

@@ -1,14 +1,17 @@
 Rates::Application.routes.draw do
 
-
-    # reports
-  get "changelog_report" => "reports#changelog"
-
-
   resources :accounts
 
   devise_for :account_holders
   devise_for :admins
+
+    # reports
+  get "changelog_report" => "reports#changelog"
+
+    # accounts
+  get "accounts/:id/change_account_holder" => "accounts#change_account_holder", as: :change_account_holder
+  get "accounts/:id/update_account_holder" => "accounts#update_account_holder", as: :update_account_holder
+
   root "pages#home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
