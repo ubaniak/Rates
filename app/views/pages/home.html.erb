@@ -1,2 +1,8 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<%= link_to "Admin sign in", new_admin_session_path %> | <%= link_to "Admin sign out", destroy_admin_session_path, :method => "delete" %>
+<br>
+<%= link_to "Account holder sign in", new_account_holder_session_path %> | <%= link_to "Account holder sign out", destroy_account_holder_session_path, :method => "delete" %>
+
+
